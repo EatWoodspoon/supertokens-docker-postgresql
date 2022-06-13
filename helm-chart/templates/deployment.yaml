@@ -43,8 +43,8 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-postgresql
-                  key: postgresql-password
+                  name: {{ include "supertokens.fullname" . }}-db-creds
+                  key: postgressPassword
                   optional: false 
             - name: SUPERTOKENS_USER
               valueFrom:
